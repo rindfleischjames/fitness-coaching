@@ -1,0 +1,12 @@
+{
+  "name": "Vitals Coaching",
+  "short_name": "Vitals",
+  "description": "Client check-ins, progress tracking, and messaging for solo coaching businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f7f7",
+  "theme_color": "#0e6e68",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
