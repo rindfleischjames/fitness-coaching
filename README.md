@@ -45,7 +45,10 @@ Copy `.env.example` to `.env.local` and fill in:
 - `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` — Settings → API
 - `SUPABASE_SERVICE_ROLE_KEY` — same page, **server-only**, never expose to the
   client. Used to send client invite emails via `auth.admin.inviteUserByEmail`.
-- `NEXT_PUBLIC_SITE_URL` — where this app is running
+- `NEXT_PUBLIC_SITE_URL` — optional fallback only. Magic-link and invite
+  redirects are derived from the actual request's origin at runtime (works
+  correctly on localhost, Vercel previews, and production without touching
+  this var), so you generally don't need to set it.
 
 ### 5. Install and run
 

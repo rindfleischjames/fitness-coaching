@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient, createServiceClient } from "@/lib/supabase/server";
+import { getServerOrigin } from "@/lib/site-url";
 
 export async function inviteClient(formData: FormData) {
   const supabase = await createClient();
@@ -15,7 +16,7 @@ export async function inviteClient(formData: FormData) {
 
   const admin = createServiceClient();
   const { error } = await admin.auth.admin.inviteUserByEmail(email, {
-    redirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}/auth/callback`,
+    redirectTo: `${await getServerOrigin()}/auth/callback`,
   });
 
   if (!error) {
